@@ -1,0 +1,10 @@
+{%extends "base.html"%}{%load i18n%}
+{%block content%}
+<form method="POST" action="{%url 'register'%}">
+    {% csrf_token %}
+    {{form.media}}
+    {{form.as_p}}
+    <p><button type="submit">{% trans "Register"|capfirst %}</button></p>
+
+</form>
+{%endblock content%}
